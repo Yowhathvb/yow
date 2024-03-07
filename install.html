@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>tutorial.com</title>
+	<link rel="icon" href="icon.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div id="loader" class="loading">
+		<img src="loading.gif">
+	</div>
+
+	<nav>
+		<div class="container">
+			<div class="logo">
+				<h1><marquee scrollamount="5">ZD|Install OS</marquee></h1>
+			</div>
+			<div class="navbar">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="install.html">INSTALL OS</a></li>
+					<li><a href="dhcp.html">DHCP & NFS</a></li>
+					<li><a href="dns.html">DNS & WEB SERVER</a></li>
+					<li><a href="ca.html">CA & MAIL SERVER</a></li>
+				</ul>
+			</div>
+			<div class="tombol">
+				<img src="menu.ico">
+			</div>
+		</div>
+	</nav><br><br><br>
+	<div class="isi">
+		<p>setelah melihat apa itu sistem operasi <a href="index.html">di sini</a>, sekarang kita akan install 2 sistem operasi, yaitu linux debian 10 sebagai server, dan windows 7 sebagai client, namun ada yang harus di siapkan, antara lain :</p><br>
+		<ol>
+			<li>yang pertama tentunya device, baik laptop maupun computer</li><br>
+			<li>yang kedua yaitu file OS (Operating System) dengan format .iso, baik yang debian ataupun windows 7</li><br>
+			<img src="file.png" alt="gmbr file" class="image"><br>
+			<li>virtualbox/vmware, saya disini menggunakan virtualbox</li><br>
+			<img src="vbox.png" alt="virtualbox"><br>
+			<li>dan internet (bila dibutuhkan)</li><br><br>
+		</ol>
+		<strong>dan untuk installnya sebagai berikut (debian 10):</strong><br><br>
+		<ol>
+			<li>buka aplikasi virtualbox/vmware</li><br>
+			<img src="buka (1).png" alt="vbox" class="image"><br><br>
+			<li>klik new yang ada di bagian kanan atas bar</li><br>
+			<img src="new.png" alt="new" class="image"><br><br>
+			<li>masukkan nama (bebas)</li><br>
+			<img src="nama.png" alt="nama" class="image"><br><br>
+			<li>pilih sistem operasi, lalu next</li><br>
+			<img src="pilih.png" alt="pilih os" class="image"><br><br>
+			<li>atur ram (boleh di skip)</li><br>
+			<img src="ram.png" alt="atur ram" class="image"><br><br>
+			<li>pilih create a virtual hardisk now</li><br>
+			<img src="cav.png" alt="create" class="image"><br><br>
+			<li>pilih VHD (Virtual Hardisk)</li><br>
+			<img src="vhd.png" alt="vhd" class="image"><br><br>
+			<li>pilih dynamically allocated</li><br>
+			<li>next</li><br>
+			<li>lalu pergi ke bagian setting</li><br>
+			<img src="setting.png" alt="setting" class="image"><br><br>
+			<li>ke bagian Storage</li><br>
+			<img src="storage.png" alt="storage" class="image">
+			<li>klik empty,lalu masukkan file debian dvd 1/dlbd, lalu klik ok</li><br>
+			<img src="empty.png" alt="empty" class="image"><br><br>
+			<li>klik start</li><br>
+			<li>karena kita akan install dengan menggunakan basic CLI maka pilih bagian install yang ada di line kedua, lalu klik enter, (untuk install hanya bisa menggunakan kerboard selanjutnya</li><br>
+			<img src="install.png" alt="install" class="image"><br><br>
+			<li>pilih english lalu enter </li><br>
+			<img src="english.png" alt="bahasa" class="image"><br><br>
+			<li>pilih united states, lalu enter</li><br>
+			<img src="us.png" alt="united" class="image"><br><br>
+			<li>pilih american english, enter</li><br>
+			<img src="american.png" alt="keyboard" class="image"><br><br>
+			<li>buat hostname</li><br>
+			<img src="hostname.png" alt="hostname" class="image"><br><br>
+			<li>masukkan nama domain, saya menggunakan domain debian.com</li><br>
+			<img src="domain.png" alt="domain" class="image"><br><br>
+			<li>buat password (saran 1234),lalu konfirmasi password</li><br>
+			<img src="password.png" alt="password" class="image"><br><br>
+			<li>buat user dan password</li><br>
+			<li>pilih time zone( zona waktu, bebas)</li><br>
+			<img src="timezone.png" alt="timezone" class="image"><br><br>
+			<li>pilih manual</li><br>
+			<img src="manual.png" alt="partici manual" class="image"><br><br>
+			<li>pilih SCSI3, lalu enter</li><br>
+			<li>pilih yes</li><br>
+			<li>pilih pri/log, lalu enter</li><br>
+			<img src="buat.png" alt="buar partici" class="image"><br><br>
+			<li>pilih create a new partition</li><br>
+			<li>kurangi menjadi 6 GB</li><br>
+			<img src="6gb.png" alt="create pts" class="image"><br><br>
+			<li>pilih primary, lalu enter</li><br>
+			<li>pilih beginning</li><br>
+			<li>bootable flag di on kan</li><br>
+			<img src="bootable.png" alt="bootable" class="image"><br>
+			<li>ke bagian done setting, lalu enter</li><br>
+			<li>ke bagian pri/log kedua, lalu lakukan hal yang sama</li><br>
+			<img src="p2.png" alt="p2" class="image"><br><br>
+			<li>namun di bagian new partition size tidak usah di atur apapun</li><br>
+			<li>jika sudah ke bagian finish, lalu enter</li><br>
+			<li>pilih no jika notif seperti di bawah</li><br>
+			<img src="no1.png" alt="no1" class="image"><br><br>
+			<li>pilih yes</li><br>
+			<img src="yes1.png" alt="yes1" class="image"><br><br>
+			<li>pilih no</li><br>
+			<img src="no2.png" alt="no2" class="image"><br><br>
+			<li>hapus seluruh bintang menggunakan spasi, lalu beri bintang menggunakan spasi pada web server,ssh server, dan standard system utilities, lalu continue</li><br>
+			<img src="tampil.png" alt="tampil" class="image"><br><br>
+			<li>pilih yes pada install GRUP BOOT</li><br>
+			<img src="grup.png" alt="grup boot" class="image"><br><br>
+			<li>pilih /dev/sda, lalu continue</li><br>
+			<img src="dev.png" alt="dev" class="image"><br><br>
+			<li>klik continue</li><br>
+			<img src="done.png" alt="done" class="image"><br><br>
+			<li>jika sudah seperti ini maka tandanya anda berhasil install debian 10</li><br>
+			<img src="kelar.png" alt="kelar" class="image"><br><br>
+		</ol>
+		<p><strong>INSTALL WINDOWS 7</strong></p><br>
+		<ol>
+			<li>klik new</li><br>
+			<li>beri nama dan atur OS, lalu next</li><br>
+			<img src="newwin.png" alt="win" class="image"><br>
+			<li>klik next</li><br>
+			<li>next</li><br>
+			<li>next</li><br>
+			<img src="windows (1).png" alt="next" class="image"><br><br>
+			<li>create</li><br>
+			<img src="windows (2).png" alt="create" class="image"><br><br>
+			<li>klik start</li><br>
+			<img src="windows (3).png" alt="start" class="image"><br><br>
+			<li>masukkan dvd windows 7, dengan mengikuti cara di bawah</li><br>
+			<img src="turu (1).png" alt="zhar turu" class="image"><br><br>
+			<img src="turu (2).png" alt="zhar turu" class="image"><br><br>
+			<li>klik start</li><br>
+			<img src="turu (3).png" alt="zhar turu" class="image"><br><br>
+			<li>klik next</li><br>
+			<img src="turu (4).png" alt="zhar turu" class="image"><br><br>
+			<li>klik install now</li><br>
+			<img src="turu (5).png" alt="zhar turu" class="image"><br><br>
+			<li>centang i accept, lalu next</li><br>
+			<img src="turu (6).png" alt="zhar turu" class="image"><br><br>
+			<li>klik custom</li><br>
+			<img src="turu (7).png" alt="zhar turu" class="image"><br><br>
+			<li>buat partisi</li><br>
+			<img src="rungkad.png" alt="zhar turu" class="image">
+			<li>next</li><br>
+			<img src="turu (8).png" alt="zhar turu" class="image"><br><br>
+			<li>tunggu hingga selesai</li><br>
+			<img src="turu (9).png" alt="zhar turu" class="image"><br><br>
+			<li>input name pc</li><br>
+			<img src="turu (10).png" alt="zhar turu" class="image"><br><br>
+			<li>masukkan password jika ingin, jika tidak maka klik next saja</li><br>
+			<img src="cidro (1).png" alt="zhar turu" class="image"><br><br>
+			<li>next</li><br>
+			<img src="cidro (2).png" alt="zhar turu" class="image"><br><br>
+			<li>klik ask me later</li><br>
+			<img src="cidro (3).png" alt="zhar turu" class="image"><br><br>
+			<li>klik next</li><br>
+			<img src="cidro (4).png" alt="zhar turu" class="image"><br><br>
+			<li>klik public network</li><br>
+			<img src="cidro (5).png" alt="zhar turu" class="image"><br><br>
+			<li>selesai</li><br>
+		</ol>
+	</div>
+	<footer>
+		<h1 style="margin-left: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: white;">CONTACTS SERVICE :</h1>
+		<h3 style="margin-left: 5px; font-size: 13px; margin-top: 4px;"><u> - wa 1  : +62 88227574417 (zharfan)</u></h3>
+		<h3 style="margin-left: 5px; font-size: 13px;"><u> - wa 2  : +62 85878276394 (zharfan)</u></h3>
+		<h3 style="margin-left: 5px; font-size: 13px;"><u> - email : bwfzbw@gmail.com (zharfan)</u></h3><br>
+		<center><small>Copyright &copy; 2023 - Zharfan, Zhar Development</small></center>
+	</footer>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
