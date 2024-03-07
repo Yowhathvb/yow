@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>tutorial.com</title>
+	<link rel="icon" href="icon.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div id="loader" class="loading">
+		<img src="loading.gif">
+	</div>
+
+	<nav>
+		<div class="container">
+			<div class="logo">
+				<h1><marquee scrollamount="5">ZD|DNS & WEB SERVER</marquee></h1>
+			</div>
+			<div class="navbar">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="install.html">INSTALL OS</a></li>
+					<li><a href="dhcp.html">DHCP & NFS</a></li>
+					<li><a href="dns.html">DNS & WEB SERVER</a></li>
+					<li><a href="ca.html">CA & MAIL SERVER</a></li>
+				</ul>
+			</div>
+			<div class="tombol">
+				<img src="menu.ico">
+			</div>
+		</div>
+	</nav><br><br><br>
+	<div class="isi">
+		<p><strong><center>KONFIGURASI DNS SERVER</center></strong></p><br>
+		<ol>
+			<li>input dvd (jika belum) caranya bisa lihat <a href="dhcp.html">DI SINI</a> pada cara ke 3- 5</li><br>
+			<li>install bind9 dan dnsutils dengan perintah #apt install bind9 dnsutils -y</li><br>
+			<img src="dns (1).png" alt="tutor deck" class="image"><br><br>
+			<li>buka directory bind dengan perintah #cd /etc/bind</li><br>
+			<img src="dns (2).png" alt="zhar turu" class="image"><br><br>
+			<li>lihat isi directory dengan perintah #ls (boleh dilewatkan)</li><br>
+			<img src="dns (3).png" alt="zhar turu" class="image"><br><br>
+			<li>#cp db.local db.forward</li><br>
+			<img src="dns (4).png" alt="zhar turu" class="image"><br><br>
+			<li>#cp db.127 db.reverse</li><br>
+			<img src="dns (5).png" alt="zhar turu" class="image"><br><br>
+			<li>cek apakah file yang kita copy dengan nama db.forward dan db.reverse ada atau tidak dengan perintah #ls</li><br>
+			<img src="dns (6).png" alt="zhar turu" class="image"><br><br>
+			<li>buka file db.forward menggunakan perintah #nano db.forward</li><br>
+			<img src="dns (7).png" alt="zhar turu" class="image"><br><br>
+			<li>konfigurasikan yang tadinya seperti ini :</li><br>
+			<img src="dns (8).png" alt="zhar turu" class="image"><br><br>
+			<p>jadi seperti ini :</p><br>
+			<img src="dns (9).png" alt="zhar turu" class="image"><br><br>
+			<li>#nano db.reverse</li><br>
+			<li>maka akan terbuka seperti ini :</li><br>
+			<img src="Screenshot (237).png" alt="zhar turu" class="image"><br><br>
+			<p>jika sudah maka konfigurasikan seperti ini :</p><br>
+			<img src="dns (17).png" alt="zhar turu" class="image"><br><br>
+			<li>#nano named.conf.local</li><br>
+			<img src="dns (11).png" alt="zhar turu" class="image"><br><br>
+			<li>konfigurasikan seperti di bawah ini</li><br>
+			<img src="dns (12).png" alt="zhar turu" class="image"><br><br>
+			<li>restart dengan perintah #/etc/init.d/bind9 restart</li><br>
+			<img src="dns (14).png" alt="zhar turu" class="image"><br><br>
+			<li>cel apakah dns berhasil atau tidak dengan menggunakan perintah #nslookup tutorial.com</li><br>
+			<img src="dns (15).png" alt="zhar turu" class="image"><br><br>
+			<li>jika seperti ini :</li><br>
+			<img src="dns (16).png" alt="zhar turu" class="image"><br><br>
+			<p>maka lakukan seperti di bawah ini :</p><br>
+			<ol>
+				<li>#nano /etc/resolv.conf, lalu tambahkan "nameserver 192.168.4.1"</li><br>
+				<img src="dns (19).png" alt="punten" class="image"><br><br>
+				<li>#reboot</li><br>
+				<li>login sebagai root</li><br>
+				<li>#/etc/init.d/bind9 restart</li><br>
+				<li>cek ulang apakah sudah bisa atau belum menggunakan perintah #nslookup tutorial.com</li><br>
+				<img src="dns (20).png" alt="" class="image"><br><br>
+				<li>jika seperti ini :</li><br>
+				<img src="dns (21).png" alt="" class="image"><br><br>
+				<p>maka tandanya konfigurasi telah berhasil, dan tinggal di cek di windows 7, dengan cara :</p><br>
+				<ol>
+					<li>buka windows 7</li><br>
+					<img src="turu (11).png" alt="" class="image"><br><br>
+					<li>buka control panel, lalu klik network and Internet</li><br>
+					<img src="turu (12).png" alt="" class="image"><br><br>
+					<li>klik network and sharing center</li><br>
+					<img src="turu (13).png" alt="" class="image"><br><br>
+					<li>klik change adapter setting</li><br>
+					<img src="turu (14).png" alt="" class="image"><br><br>
+					<li>buka local area connection</li><br>
+					<img src="turu (15).png" alt="" class="image"><br><br>
+					<li>klik properties</li><br>
+					<li>buka ipv4</li><br>
+					<li>setting yang tadinya seperti ini :</li><br>
+					<img src="turu (18).png" alt="" class="image"><br><br>
+					<p>jadi seperti ini :</p><br>
+					<img src="turu (19).png" alt="" class="image"><br>
+					<li>jangan lupa setting ip static ya ges ya, dengan address : 192.168.4.2, netmask : 255.255.255.0, gateway 192.168.4.1 (jika belum tersambung dengan dhcp)</li><br>
+					<li>klik ok</li><br>
+					<li>klik ok</li><br>
+					<li>buka cmd/command prompt</li><br>
+					<img src="turu (20).png" alt="" class="image"><br><br>
+					<li>ketik "nslookup tutorial.com"</li><br>
+					<img src="turu (21).png" alt="" class="image"><br><br>
+					<li>jika sudah seperti ini </li><br>
+					<img src="turu (22).png" alt="" class="image"><br><br>
+					<p>maka konfigurasi anda berhasil</p><br>
+				</ol>
+			</ol>
+		</ol>
+		<p><center><strong>WEB SERVER</strong></center></p><br>
+		<p>nah.. karena kita sudah setting dns, sekarang kita akan membuat web server dengan menggunakan dns tersebut. Dengan menggunakan aplikasi apache2.</p><br>
+		<p>caranya simak di bawah ini.</p><br>
+		<ol>
+			<li>install apache2 dengan perintah #apt install apache2</li><br>
+			<img src="webs (1).png" alt="" class="image"><br><br>
+			<li>jika sudah maka akan muncul seperti ini</li><br>
+			<img src="webs (2).png" alt="" class="image"><br><br>
+			<li>#cd /etc/apache2/sites-available</li><br>
+			<img src="webs (3).png" alt="" class="image"><br><br>
+			<li>#ls (boleh di skip)</li><br>
+			<img src="webs (4).png" alt="" class="image"><br><br>
+			<img src="webs (5).png" alt="" class="image"><br><br>
+			<li>buat file baru dengan format .conf, dengan cara meng copy file 000-default menggunakan perintah #cp 000-default.conf web.conf</li><br>
+			<img src="webs (6).png" alt="" class="image"><br><br>
+			<li>#nano web.conf</li><br>
+			<img src="webs (7).png" alt="" class="image"><br><br>
+			<img src="webs (8).png" alt="" class="image"><br><br>
+			<li>ubah emailnya menjadi seperti ini</li><br>
+			<img src="webs (9).png" alt="" class="image"><br><br>
+			<li>save</li><br>
+			<li>#cd /var/www/html</li><br>
+			<img src="webs (10).png" alt="" class="image"><br><br>
+			<li>#nano index.html</li><br>
+			<img src="webs (11).png" alt="" class="image"><br><br>
+			<li>lalu kosongkan isi file menjadi seperti di bawah ini</li><br>
+			<img src="webs (12).png" alt="" class="image"><br><br>
+			<li>ketik seperti di bawah</li><br>
+			<img src="webs (13).png" alt="" class="image">
+			<li>#a2dissite 000-default.conf</li><br>
+			<img src="ensite (1).png" alt="" class="image"><br><br>
+			<img src="ensite (2).png" alt="" class="image"><br><br>
+			<li>#a2ensite web.conf</li><br>
+			<img src="ensite (3).png" alt="" class="image"><br><br>
+			<img src="ensite (4).png" alt="" class="image"><br><br>
+			<li>restart menggunakan perintah #/etc/init.d/apache2 restart</li><br>
+			<img src="webs (14).png" alt="" class="image"><br><br>
+			<li>buka windows 7</li><br>
+			<li>buka internet explorer</li><br>
+			<img src="webs (15).png" alt="" class="image"><br><br>
+			<li>ketik "tutorial.com di bagian pencarian</li><br>
+			<img src="webs (16).png" alt="" class="image"><br><br>
+			<li>jika sudah seperti ini maka tandanya web server sudah jadi</li><br>
+			<img src="webs (17).png" alt="" class="image"><br><br>
+		</ol>
+	</div>
+	<footer>
+		<h1 style="margin-left: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: white;">CONTACTS SERVICE :</h1>
+		<h3 style="margin-left: 5px; font-size: 13px; margin-top: 4px;"><u> - wa 1  : +62 88227574417 (zharfan)</u></h3>
+		<h3 style="margin-left: 5px; font-size: 13px;"><u> - wa 2  : +62 85878276394 (zharfan)</u></h3>
+		<h3 style="margin-left: 5px; font-size: 13px;"><u> - email : bwfzbw@gmail.com (zharfan)</u></h3><br>
+		<center><small>Copyright &copy; 2023 - Zharfan, Zhar Development</small></center>
+	</footer>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
