@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>tutorial.com</title>
+	<link rel="icon" href="icon.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div id="loader" class="loading">
+		<img src="loading.gif">
+	</div>
+
+	<nav>
+		<div class="container">
+			<div class="logo">
+				<h1><marquee scrollamount="5">ZD|DHCP & NFS SERVER</marquee></h1>
+			</div>
+			<div class="navbar">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="install.html">INSTALL OS</a></li>
+					<li><a href="dhcp.html">DHCP & NFS</a></li>
+					<li><a href="dns.html">DNS & WEB SERVER</a></li>
+					<li><a href="ca.html">CA & MAIL SERVER</a></li>
+				</ul>
+			</div>
+			<div class="tombol">
+				<img src="menu.ico">
+			</div>
+		</div>
+	</nav><br><br><br>
+	<div class="isi">
+		<p><strong><center>INSTALL DHCP SERVER</center></strong></p><br>
+        <ol>
+            <li>setting adapter menjadi host only</li><br>
+            <li>buka debian</li><br>
+            <li>ketik perintah #apt-cdrom add</li><br>
+            <li>masukkan dvd dlbd</li><br>
+            <img src="disk.png" alt="disk" class="image"><br><br>
+            <li>pilih force unmount</li><br>
+            <img src="force.png" alt="force" class="image"><br><br>
+            <li>#apt install isc-dhcp-server</li><br>
+            <li>ketik y</li><br>
+            <li>#nano /etc/dhcp/dhcpd.conf</li><br>
+            <li>scroll cari #A slighty</li><br>
+            <li>lakukan konfigurasi seperti di bawah</li><br>
+            <img src="aturip.png" alt="atur ip" class="image"><br><br>
+            <li>save</li><br>
+            <li>#nano /etc/default/isc-dhcp-server</li><br>
+            <li>tambahkan enp0s3 pada interfacev4</li><br>
+            <img src="inter.png" alt="interfaces" class="image"><br><br>
+            <li>restart dengan perintah #/etc/init.d/isc-dhc-server restart</li><br>
+            <li>jika berhasil, maka buka windows 7</li><br>
+            <li>buka open network and sharing center</li><br>
+            <img src="net (1).png" alt="" class="image"><br><br>
+            <li>pilih change adapter setting</li><br>
+            <img src="net (2).png" alt="" class="image"><br><br>
+            <li>buka local area connection</li><br>
+            <img src="net (3).png" alt="" class="image"><br><br>
+            <li>pilih properties</li><br>
+            <img src="net (4).png" alt="" class="image"><br><br>
+            <li>pilih protocol v4</li><br>
+            <img src="net (5).png" alt="" class="image">
+            <li>atur menjadi obtain</li><br>
+			<img src="dhcp.png" alt="obtain" class="image"><br><br>
+			<li>cek apakah sudah berubah ke network 192.168.4.0 atau belum</li><br>
+        </ol>
+		<p><strong><center>KONFIGURASI NFS SERVER ( SAMBA )</center></strong></p><br>
+		<ol>
+			<li>#apt install samba -y</li><br>
+			<img src="smb (1).png" alt="" class="image"><br><br>
+			<li>pilih no</li><br>
+			<img src="smb (2).png" alt="" class="image"><br><br>
+			<li>#cd /home</li><br>
+			<img src="smb (3).png" alt="" class="image"><br><br>
+			<li>#mkdir samba</li><br>
+			<img src="smb (4).png" alt="" class="image"><br><br>
+			<li>#chmod 777 samba/</li><br>
+			<img src="smb (5).png" alt="" class="image"><br><br>
+			<li>#nano /etc/samba/smb.conf</li><br>
+			<img src="smb (7).png" alt="" class="image"><br><br>
+			<img src="smb (8).png" alt="" class="image"><br><br>
+			<li>scroll ke bawah, lalu konfigurasi seperti ini</li><br>
+			<img src="smb (9).png" alt="" class="image"><br><br>
+			<li>membuat user dengan perintah #useradd smbusr1</li><br>
+			<img src="smb (11).png" alt="" class="image"><br><br>
+			<li>beri password pada user dengan perintah #smbpasswd -a smbusr1</li><br>
+			<img src="smb (12).png" alt="" class="image"><br><br>
+			<img src="smb (13).png" alt="" class="image"><br><br>
+			<li>#/etc/init.d/smb restart</li><br>
+			<img src="smb (15).png" alt="" class="image"><br><br>
+			<li>ke windows 7, dan buka windows explorer</li><br>
+			<img src="smb (16).png" alt="" class="image"><br><br>
+			<li>ketik \\192.168.4.1 pada kolom pencarian di windows explorer</li><br>
+			<img src="smb (17).png" alt="" class="image"><br><br>
+			<li>klik 2 kali untuk masuk ke folder samba, lalu masukkan usernam (smbusr1) dan passwordnya</li><br>
+			<img src="smb (18).png" alt="" class="image"><br><br>
+			<li>selesai</li><br>
+			<img src="smb (19).png" alt="" class="image"><br><br>
+		</ol>
+	</div>
+	<footer>
+		<h1 style="margin-left: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: white;">CONTACTS SERVICE :</h1>
+		<h3 style="margin-left: 5px; font-size: 13px; margin-top: 4px;"><u> - wa 1  : +62 88227574417 (zharfan)</u></h3>
+		<h3 style="margin-left: 5px; font-size: 13px;"><u> - wa 2  : +62 85878276394 (zharfan)</u></h3>
+		<h3 style="margin-left: 5px; font-size: 13px;"><u> - email : bwfzbw@gmail.com (zharfan)</u></h3><br>
+		<center><small>Copyright &copy; 2023 - Zharfan, Zhar Development</small></center>
+	</footer>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

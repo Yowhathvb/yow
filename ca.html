@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>tutorial.com</title>
+	<link rel="icon" href="icon.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div id="loader" class="loading">
+		<img src="loading.gif">
+	</div>
+
+	<nav>
+		<div class="container">
+			<div class="logo">
+				<h1><marquee scrollamount="5">ZD|CA & MAIL SERVER</marquee></h1>
+			</div>
+			<div class="navbar">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="install.html">INSTALL OS</a></li>
+					<li><a href="dhcp.html">DHCP & NFS</a></li>
+					<li><a href="dns.html">DNS & WEB SERVER</a></li>
+					<li><a href="ca.html">CA & MAIL SERVER</a></li>
+				</ul>
+			</div>
+			<div class="tombol">
+				<img src="menu.ico">
+			</div>
+		</div>
+	</nav><br><br><br>
+	<div class="isi">
+		<p><center><strong>KONFIGURASI CA</strong></center></p><br>
+		<ol>
+			<li>#apt install openssl -y</li><br>
+			<img src="ca.png" alt="" class="image"><br><br>
+			<li>#a2enmod ssl</li><br>
+			<img src="ca (1).png" alt="" class="image"><br><br>
+			<img src="ca (2).png" alt="" class="image"><br><br>
+			<li>openssl req -x509 nodes -days365 -newkey rsa:2048 -keyout /etc/ssl/private/slawi.key -out /etc/ssl/certs/slawi.crt</li><br>
+			<img src="ca (3).png" alt="" class="image"><br><br>
+			<li>isi seperti di bawah</li><br>
+			<img src="ca (4).png" alt="" class="image"><br><br>
+			<li>#cd /etc/apache2/sites-available</li><br>
+			<img src="ca (5).png" alt="" class="image"><br><br>
+			<li>#cp default-ssl.conf ca.conf</li><br>
+			<img src="ca (6).png" alt="" class="image"><br><br>
+			<li>#nano ca.conf</li><br>
+			<img src="ca (7).png" alt="" class="image"><br><br>
+			<li>isi seperti di bawah</li><br>
+			<img src="ca (8).png" alt="" class="image"><br><br>
+			<li>scroll dan ubah menjadi seperti ini</li><br>
+			<img src="ca (9).png" alt="" class="image"><br><br>
+			<li>#a2ensite ca.conf</li><br>
+			<img src="ca (10).png" alt="" class="image"><br><br>
+			<li>#/etc/init.d/apache2 restart</li><br>
+			<img src="ca (11).png" alt="" class="image"><br><br>
+			<li>buka windows 7,dan internet explorer</li><br>
+			<img src="ca (12).png" alt="" class="image"><br><br>
+			<li>ketik https://tutorial.com pada kolom pencarian</li><br>
+			<img src="ca (13).png" alt="" class="image"><br><br>
+			<li>klik continue to this website</li><br>
+			<img src="ca 2 (1).png" alt="" class="image"><br><br>
+			<li>jika muncul halaman seperti ini tandanya sudah selesai</li><br>
+			<img src="ca 2 (2).png" alt="" class="image"><br><br>
+		</ol>
+		<p><center><strong>MAIL SERVER (SAYA FAILED JADI INSTALL SAJA)</strong></center></p>
+	</div>
+	<footer>
+		<h1 style="margin-left: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: white;">CONTACTS SERVICE :</h1>
+		<h3 style="margin-left: 5px; font-size: 13px; margin-top: 4px;"><u> - wa 1  : +62 88227574417 (zharfan)</u></h3>
+		<h3 style="margin-left: 5px; font-size: 13px;"><u> - wa 2  : +62 85878276394 (zharfan)</u></h3>
+		<h3 style="margin-left: 5px; font-size: 13px;"><u> - email : bwfzbw@gmail.com (zharfan)</u></h3><br>
+		<center><small>Copyright &copy; 2023 - Zharfan, Zhar Developer</small></center>
+	</footer>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
